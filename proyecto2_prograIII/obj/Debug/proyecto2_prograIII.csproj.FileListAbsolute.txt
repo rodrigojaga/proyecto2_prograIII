@@ -1,0 +1,12 @@
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.csproj.AssemblyReference.cache
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.Properties.Resources.resources
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.csproj.GenerateResource.cache
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.csproj.CoreCompileInputs.cache
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\bin\Debug\proyecto2_prograIII.exe.config
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\bin\Debug\proyecto2_prograIII.exe
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\bin\Debug\proyecto2_prograIII.pdb
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.exe
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.pdb
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.frmPrincipal.resources
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.frmEquipo.resources
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.frmJugador.resources
