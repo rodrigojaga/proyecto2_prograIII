@@ -64,14 +64,16 @@
             // torneosToolStripMenuItem
             // 
             this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.torneosToolStripMenuItem.Text = "Torneos";
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.torneosToolStripMenuItem.Text = "Partidos";
             this.torneosToolStripMenuItem.Click += new System.EventHandler(this.torneosToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::proyecto2_prograIII.Properties.Resources.fondo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(940, 632);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

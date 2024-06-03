@@ -116,6 +116,10 @@ namespace proyecto2_prograIII
 
         private void torneosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            Form partidos = new frmPartidos();
+            partidos.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)

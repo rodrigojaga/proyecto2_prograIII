@@ -110,6 +110,7 @@ namespace proyecto2_prograIII.LinkedList
             {
                 // El nodo a eliminar es el primero
                 inicio = inicio.siguiente;
+
             }
             else
             {
@@ -124,6 +125,9 @@ namespace proyecto2_prograIII.LinkedList
                 if (actual != null)
                 {
                     anterior.siguiente = actual.siguiente;
+                    actual.dato = null;
+                    actual.siguiente = null;
+                    actual = null;
                     return "Nodo Eliminado";
                 }
                 else

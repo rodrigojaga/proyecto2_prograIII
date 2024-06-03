@@ -24,6 +24,7 @@ namespace proyecto2_prograIII
         {
             InitializeComponent();
             mtdLeerJugadores();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void mtdLeerJugadores()

@@ -64,6 +64,12 @@
     <Compile Include="frmJugador.Designer.cs">
       <DependentUpon>frmJugador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPartidos.Designer.cs">
+      <DependentUpon>frmPartidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,7 +91,7 @@
     <Compile Include="LinkedList\InterfaceComp.cs" />
     <Compile Include="Models\clsEquipos.cs" />
     <Compile Include="Models\clsJugadorEst.cs" />
-    <Compile Include="Models\clsTorneo.cs" />
+    <Compile Include="Models\clsPartido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEquipo.resx">
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmJugador.resx">
       <DependentUpon>frmJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPartidos.resx">
+      <DependentUpon>frmPartidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -122,6 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

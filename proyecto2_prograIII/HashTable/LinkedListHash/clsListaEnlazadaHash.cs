@@ -54,10 +54,25 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
         {
             StringBuilder sb = new StringBuilder();
             clsNodoLKHash actual = inicio;
+            
+            if(inicio == null)
+            {
+                return "";
+            }
+
             while (actual != null)
             {
-                sb.Append(actual.dato.ToString());
-                //sb.Append(" ");
+                //sb.Append(actual.dato.ToString());
+                //sb.Append(" ");                
+                if(actual.dato is clsNodoLKHash)
+                {
+                    sb.Append(((InterfaceCompHash)((clsNodoLKHash)actual.dato).dato).ToString());
+                }
+                else
+                {
+                    sb.Append(((InterfaceCompHash)actual.dato).ToString());
+                }
+
                 actual = actual.siguiente;
             }
             return sb.ToString();

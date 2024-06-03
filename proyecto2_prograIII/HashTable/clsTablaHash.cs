@@ -27,7 +27,7 @@ namespace proyecto2_prograIII.HashTable
         public long fncHashMod(long intValor)
         {
 
-            return intValor % intTamanoTabla;
+            return (intValor/17) % intTamanoTabla;
 
         }
 
@@ -45,8 +45,10 @@ namespace proyecto2_prograIII.HashTable
         }
 
 
-        public clsNodoLKHash buscar(long clave, Object valor)
+        public clsNodoLKHash buscar(Object valor)
         {
+            InterfaceCompHash v = (InterfaceCompHash)valor;
+            long clave = v.convertirASCII();
             long num = fncHashMod((long)clave);
             clsNodoLKHash temp = Tabla[num].buscar(valor);
             if (temp != null)
@@ -73,6 +75,20 @@ namespace proyecto2_prograIII.HashTable
                 return temp;
 
             return null;
+        }
+
+        public string leerTodo()
+        {
+            StringBuilder sb = new StringBuilder();
+            int i = 0;
+            while(i < intTamanoTabla)
+            {
+                if (Tabla[i] != null)
+                    sb.Append(Tabla[i].ImprimirLista());
+
+                i++;
+            }
+            return sb.ToString();
         }
 
     }
