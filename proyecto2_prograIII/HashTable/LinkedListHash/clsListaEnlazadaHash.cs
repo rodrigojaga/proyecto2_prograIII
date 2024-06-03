@@ -176,7 +176,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
                     // Nodo encontrado
                     Object datoAntiguo = actual.dato; // Almacena el dato antiguo
                     actual.dato = nuevoValor; // Actualiza el dato del nodo
-                    return "Nodo Modificado exitosamente "; // Devuelve éxito con el dato modificado
+                    return "Nodo Modificado exitosamente "; // Solo ganancias
                 }
                 else
                 {
@@ -244,7 +244,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
                 temp.siguiente = null;
                 temp.dato = null;
                 temp = null;
-                return "Nodo Eliminado: " + datoEliminado;
+                return "Nodo Eliminado: " + buscado.ToString();
             }
             else
             {

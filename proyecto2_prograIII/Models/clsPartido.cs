@@ -24,7 +24,8 @@ namespace proyecto2_prograIII.Models
 
         }
 
-        public clsPartido(string date_GMT, string status, string home_team_name, string away_team_name, string referee, string home_team_goal_count, string away_team_goal_count, string total_goal_count, string stadium_nam)
+        public clsPartido(string date_GMT, string status, string home_team_name, string away_team_name, string referee, string home_team_goal_count, string away_team_goal_count  //, string total_goal_count
+            , string stadium_nam)
         {
             this.date_GMT = date_GMT;
             this.status = status;
@@ -33,7 +34,7 @@ namespace proyecto2_prograIII.Models
             this.referee = referee;
             this.home_team_goal_count = home_team_goal_count;
             this.away_team_goal_count = away_team_goal_count;
-            this.total_goal_count = total_goal_count;
+            this.total_goal_count = int.Parse(home_team_goal_count) + int.Parse(away_team_goal_count)+"";
             this.stadium_name = stadium_nam;
         }
 

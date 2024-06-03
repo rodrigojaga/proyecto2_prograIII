@@ -34,6 +34,8 @@ namespace proyecto2_prograIII.HashTable
 
         public void insertar(long clave, Object valor)
         {
+            //InterfaceCompHash v = (InterfaceCompHash)valor;
+            //long clave = v.convertirASCII();
             long num = fncHashMod(clave);
             //clsClaveYValor m = new clsClaveYValor(num, valor);
             clsNodoLKHash nd = new clsNodoLKHash(valor);
@@ -57,8 +59,10 @@ namespace proyecto2_prograIII.HashTable
             return null;
         }
 
-        public string eliminar(long clave, Object valor)
+        public string eliminar(Object valor)
         {
+            InterfaceCompHash v = (InterfaceCompHash)valor;
+            long clave = v.convertirASCII();
             long num = fncHashMod((long)clave);
             string temp = Tabla[num].Eliminar(valor);
             if (!string.IsNullOrEmpty(temp))
@@ -67,8 +71,11 @@ namespace proyecto2_prograIII.HashTable
             return null;
         }
         //                      Clave long(apellido)    Nombre busqueda     Nuevo atleta que cambia al viejo
-        public string modificar(long clave, Object valor, Object nuevo)
+        public string modificar(Object valor, Object nuevo)
         {
+            InterfaceCompHash v = (InterfaceCompHash)valor;
+            long clave = v.convertirASCII();
+
             long num = fncHashMod((long)clave);
             string temp = Tabla[num].Modificar(valor, nuevo);
             if (!string.IsNullOrEmpty(temp))

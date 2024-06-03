@@ -60,7 +60,7 @@ namespace proyecto2_prograIII
                         {
                             clsPartido game = new clsPartido(parts[0], parts[1], parts[2], 
                                                             parts[3], parts[4], parts[5], 
-                                                            parts[6], parts[7], parts[8]);
+                                                            parts[6], parts[8]);
                             //clave
                             long clave = game.convertirASCII();
                                                         
@@ -124,7 +124,7 @@ namespace proyecto2_prograIII
                         txtAway.Text = at.away_team_name;
                         txtTotalGo.Text = at.total_goal_count;
                         txtHomeGo.Text = at.home_team_goal_count;
-                        txtAway.Text = at.away_team_goal_count;
+                        txtAwayGo.Text = at.away_team_goal_count;
                         txtDate.Text = at.date_GMT;
                         txtReferee.Text = at.referee;
                         txtStatus.Text = at.status;
@@ -141,7 +141,7 @@ namespace proyecto2_prograIII
                         txtAway.Text = at.away_team_name;
                         txtTotalGo.Text = at.total_goal_count;
                         txtHomeGo.Text = at.home_team_goal_count;
-                        txtAway.Text = at.away_team_goal_count;
+                        txtAwayGo.Text = at.away_team_goal_count;
                         txtDate.Text = at.date_GMT;
                         txtReferee.Text = at.referee;
                         txtStatus.Text = at.status;
@@ -168,6 +168,72 @@ namespace proyecto2_prograIII
             txtDate.Text = "";
             txtReferee.Text = "";
             txtStatus.Text = "";
+            //txtBuscarAway.Text = "";
+            //txtBuscarDate.Text = "";
+            //txtBuscarHome.Text = "";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string date = txtBuscarDate.Text;
+            string home = txtBuscarHome.Text;
+            string away = txtBuscarAway.Text;
+            if (string.IsNullOrEmpty(date) || string.IsNullOrEmpty(home) || string.IsNullOrEmpty(away))
+            {
+                MessageBox.Show("DEBE LLENAR TODOS LOS CAMPOS SOLICITADOS");
+            }
+            else
+            {
+                clsPartido p = new clsPartido(date, home, away);
+                string response = partidosHash.eliminar(p);
+                if (!string.IsNullOrEmpty(response))
+                {
+                    MessageBox.Show(response);
+                }
+                else
+                {
+                    MessageBox.Show("Objeto no encontrado");
+                }
+
+                mtdBlanqueado();
+
+
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            //datos
+            string stadium = txtStadium.Text;
+            string home = txtHome.Text;
+            string away = txtAway.Text;
+            //string goals = txtTotalGo.Text;
+            string homeGo = txtHomeGo.Text;
+            string awayGo = txtAwayGo.Text;
+            string date = txtDate.Text;
+            string referee = txtReferee.Text;
+            string status = txtStatus.Text; 
+
+            clsPartido nuevoValor = new clsPartido(date, status, home, away, referee,homeGo,awayGo //,goals
+                ,stadium);
+
+            string buscarDate = txtBuscarDate.Text;
+            string buscarHome = txtBuscarHome.Text;
+            string buscarAway = txtBuscarAway.Text;
+
+            clsPartido clave = new clsPartido(buscarDate,buscarHome,buscarAway);
+
+            string response = partidosHash.modificar(clave, nuevoValor);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                MessageBox.Show(response);
+                mtdBlanqueado();
+            }
+            else
+            {
+                MessageBox.Show("Objeto no encontrado");
+            }
         }
     }
 }
