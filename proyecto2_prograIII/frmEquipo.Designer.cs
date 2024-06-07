@@ -48,6 +48,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPerfomanceRank = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstEquipo
@@ -60,7 +62,7 @@
             // 
             // btnMostrarE
             // 
-            this.btnMostrarE.Location = new System.Drawing.Point(10, 193);
+            this.btnMostrarE.Location = new System.Drawing.Point(26, 426);
             this.btnMostrarE.Name = "btnMostrarE";
             this.btnMostrarE.Size = new System.Drawing.Size(122, 23);
             this.btnMostrarE.TabIndex = 1;
@@ -142,7 +144,7 @@
             // 
             // txtDraws
             // 
-            this.txtDraws.Location = new System.Drawing.Point(444, 326);
+            this.txtDraws.Location = new System.Drawing.Point(273, 330);
             this.txtDraws.Name = "txtDraws";
             this.txtDraws.Size = new System.Drawing.Size(178, 20);
             this.txtDraws.TabIndex = 11;
@@ -204,7 +206,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(387, 329);
+            this.label7.Location = new System.Drawing.Point(189, 333);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 18;
@@ -217,11 +219,29 @@
             this.txtBuscar.Size = new System.Drawing.Size(304, 20);
             this.txtBuscar.TabIndex = 19;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(506, 337);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Performance Rank";
+            // 
+            // txtPerfomanceRank
+            // 
+            this.txtPerfomanceRank.Location = new System.Drawing.Point(608, 330);
+            this.txtPerfomanceRank.Name = "txtPerfomanceRank";
+            this.txtPerfomanceRank.Size = new System.Drawing.Size(178, 20);
+            this.txtPerfomanceRank.TabIndex = 20;
+            // 
             // frmEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 598);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtPerfomanceRank);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -271,5 +291,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtPerfomanceRank;
     }
 }

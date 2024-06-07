@@ -1,4 +1,5 @@
 ﻿using proyecto2_prograIII.AVL;
+using proyecto2_prograIII.HashTable.LinkedListHash;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace proyecto2_prograIII.Models
 {
-    public class clsEquipos:interfaceComparador
+    public class clsEquipos:interfaceComparador,InterfaceCompHash
     {
 
         public string team_name { get; set; }
@@ -18,11 +19,12 @@ namespace proyecto2_prograIII.Models
         public string wins { get; set; }
         public string draws { get; set; }
         public string losse { get; set; }
+        public string performance_rank { get; set; }
 
 
         public clsEquipos() { } 
         
-        public clsEquipos(string team_name, string  common_name, string country, string matches_played, string wins, string draws, string losse)
+        public clsEquipos(string team_name, string  common_name, string country, string matches_played, string wins, string draws, string losse, string performance_rank)
         {
             this.team_name = team_name;
             this.common_name = common_name;
@@ -31,6 +33,7 @@ namespace proyecto2_prograIII.Models
             this.wins = wins;
             this.draws = draws;
             this.losse = losse;
+            this.performance_rank = performance_rank;
         }
 
         public clsEquipos(string common_name)
@@ -60,8 +63,22 @@ namespace proyecto2_prograIII.Models
 
         public override string ToString()
         {
-            return $"{common_name} - {wins} - {losse} - {country}\r\n";
+            return $"{performance_rank} - {common_name} - {wins} - {losse} - {country}\r\n";
         }
 
+        public bool igualQueHash(object q)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool igualQueEliminarHash(object q)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long convertirASCII()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

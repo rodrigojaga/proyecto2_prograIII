@@ -1,4 +1,5 @@
-﻿using proyecto2_prograIII.HashTable.LinkedListHash;
+﻿using proyecto2_prograIII.AVL;
+using proyecto2_prograIII.HashTable.LinkedListHash;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace proyecto2_prograIII.Models
 {
-    public class clsPartido: InterfaceCompHash
+    public class clsPartido: InterfaceCompHash, interfaceComparador
     {
         public string date_GMT { get; set; }
         public string status { get; set; }
@@ -50,9 +51,17 @@ namespace proyecto2_prograIII.Models
             this.home_team_name=home_team_name;
             this.away_team_name = away_team_name;
         }
+        //Usado en torneo
+        public clsPartido(string home_team_name, string away_team_name, string date_GMT, string stadium_name)
+        {
+            this.home_team_name = home_team_name;
+            this.away_team_name = away_team_name;
+            this.date_GMT = date_GMT;
+            this.stadium_name = stadium_name;
+        }
 
         //Compara un string concatenado de equipo local, visitante y fecha del partido
-        public bool igualQue(object q)
+        public bool igualQueHash(object q)
         {
             clsPartido at = (clsPartido)((clsNodoLKHash)q).dato;
             string comparar = at.home_team_name + at.away_team_name + at.date_GMT;
@@ -64,7 +73,7 @@ namespace proyecto2_prograIII.Models
             return false;
         }
         //Compara un string concatenado de equipo local, visitante y fecha del partido
-        public bool igualQueEliminar(object q)
+        public bool igualQueEliminarHash(object q)
         {
             clsPartido at = (clsPartido) q;
             string comparar = at.home_team_name + at.away_team_name + at.date_GMT;
@@ -95,6 +104,38 @@ namespace proyecto2_prograIII.Models
         public override string ToString()
         {
             return $"{date_GMT} - {home_team_name} - {away_team_name} - {stadium_name} \r\n";
+        }
+
+        public bool igualQue(object q)
+        {
+            //string[] fechaSep = this.date_GMT.Split('-');
+            //string[] fechaObj = ((clsPartido)q).date_GMT.Split('-');
+            //if (fechaSep[0].CompareTo(fechaObj[0]) == 0)
+            //    return true;
+            //return false;
+
+            return (this.date_GMT+this.stadium_name).CompareTo(((clsPartido)q).date_GMT+ ((clsPartido)q).stadium_name) == 0;
+        }
+
+        public bool menorQue(object q)
+        {
+            //string[] fechaSep = this.date_GMT.Split('-');
+            //string[] fechaObj = ((clsPartido)q).date_GMT.Split('-');
+            //if (fechaSep[0].CompareTo(fechaObj[0]) == -1)
+            //    return true;
+            //return false;
+
+            return (this.date_GMT + this.stadium_name).CompareTo(((clsPartido)q).date_GMT + ((clsPartido)q).stadium_name) == -1;
+        }
+
+        public bool mayorQue(object q)
+        {
+            //string[] fechaSep = this.date_GMT.Split('-');
+            //string[] fechaObj = ((clsPartido)q).date_GMT.Split('-');
+            //if (fechaSep[0].CompareTo(fechaObj[0]) == 1)
+            //    return true;
+            //return false;
+            return (this.date_GMT + this.stadium_name).CompareTo(((clsPartido)q).date_GMT + ((clsPartido)q).stadium_name) == 1;
         }
     }
 }

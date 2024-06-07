@@ -88,6 +88,7 @@
             this.btnAgregar.TabIndex = 47;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBuscarDate
             // 
@@ -228,6 +229,7 @@
             // 
             // txtTotalGo
             // 
+            this.txtTotalGo.Enabled = false;
             this.txtTotalGo.Location = new System.Drawing.Point(165, 255);
             this.txtTotalGo.Name = "txtTotalGo";
             this.txtTotalGo.Size = new System.Drawing.Size(146, 20);

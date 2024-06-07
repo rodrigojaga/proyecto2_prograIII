@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace proyecto2_prograIII
 {
@@ -48,6 +49,10 @@ namespace proyecto2_prograIII
                     bool header = true;
                     while ((line = reader.ReadLine()) != null)
                     {
+                        if (line.StartsWith("#"))
+                        {
+                            continue;
+                        }
                         // Saltar la primera línea si es un encabezado
                         if (header)
                         {
@@ -81,6 +86,46 @@ namespace proyecto2_prograIII
             }
         }
 
+        private void mtdAgregarPartido()
+        {
+            string directorioActual = Directory.GetCurrentDirectory();
+            string rutaRelativa = Path.Combine(directorioActual, @"..\..\Resources\PremierLeague18_19_Partidos.csv");
+
+            // Datos que deseas agregar
+            string[] newRecords = new string[]
+            {
+            //date_GMT,status,home_team_name,away_team_name,referee,home_team_goal_count,away_team_goal_count,total_goal_count,stadium_name
+            $"{txtDate.Text},{txtStatus.Text},{txtHome.Text}," +
+            $"{txtAway.Text},{txtReferee.Text},{txtHomeGo.Text}," +
+            $"{txtAwayGo.Text},{int.Parse(txtAwayGo.Text)+int.Parse(txtHomeGo.Text)+""},{txtStadium.Text}"
+            };
+
+            try
+            {
+                // Usar StreamWriter para abrir el archivo en modo append (agregar)
+                using (StreamWriter sw = new StreamWriter(rutaRelativa, append: true))
+                {
+                    foreach (var record in newRecords)
+                    {
+                        sw.WriteLine(record);
+                    }
+                }
+
+                MessageBox.Show("Datos agregados al archivo CSV exitosamente.");
+
+                // Confirmar la escritura
+                string fileContent = File.ReadAllText(rutaRelativa);
+                MessageBox.Show("Contenido actual del archivo:\n" + fileContent);
+
+                mtdBlanqueado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al escribir en el archivo: {ex.Message}");
+            }
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -105,7 +150,7 @@ namespace proyecto2_prograIII
             string away = txtBuscarAway.Text;
             if (string.IsNullOrEmpty(date) || string.IsNullOrEmpty(home) || string.IsNullOrEmpty(away))
             {
-                MessageBox.Show("DEBE LLENAR TODOS LOS CAMPOS SOLICITADOS");
+                MessageBox.Show("FILL IN THE GAP");
             }
             else
             {
@@ -151,7 +196,7 @@ namespace proyecto2_prograIII
                 }
                 else
                 {
-                    MessageBox.Show("Objeto no encontrado");
+                    MessageBox.Show("Item not found");
                 }
             }
         }
@@ -164,7 +209,7 @@ namespace proyecto2_prograIII
             txtAway.Text = "";
             txtTotalGo.Text = "";
             txtHomeGo.Text = "";
-            txtAway.Text = "";
+            txtAwayGo.Text = "";
             txtDate.Text = "";
             txtReferee.Text = "";
             txtStatus.Text = "";
@@ -180,7 +225,7 @@ namespace proyecto2_prograIII
             string away = txtBuscarAway.Text;
             if (string.IsNullOrEmpty(date) || string.IsNullOrEmpty(home) || string.IsNullOrEmpty(away))
             {
-                MessageBox.Show("DEBE LLENAR TODOS LOS CAMPOS SOLICITADOS");
+                MessageBox.Show("FILL OUT THE FORM");
             }
             else
             {
@@ -192,7 +237,7 @@ namespace proyecto2_prograIII
                 }
                 else
                 {
-                    MessageBox.Show("Objeto no encontrado");
+                    MessageBox.Show("Item not found");
                 }
 
                 mtdBlanqueado();
@@ -232,7 +277,58 @@ namespace proyecto2_prograIII
             }
             else
             {
-                MessageBox.Show("Objeto no encontrado");
+                MessageBox.Show("Object not found");
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //datos
+            string stadium = txtStadium.Text;
+            string home = txtHome.Text;
+            string away = txtAway.Text;
+            //string goals = txtTotalGo.Text;
+            string homeGo = txtHomeGo.Text;
+            string awayGo = txtAwayGo.Text;
+            string date = txtDate.Text;
+            string referee = txtReferee.Text;
+            string status = txtStatus.Text;
+
+            clsPartido nuevoValor = new clsPartido(date, status, home, away, referee, homeGo, awayGo, stadium);
+            long clave = nuevoValor.convertirASCII();
+
+            //partidosHash.insertar(clave, nuevoValor);
+
+            //MessageBox.Show("New data entered");
+
+            if (string.IsNullOrEmpty(stadium) ||
+               string.IsNullOrEmpty(home) ||
+               string.IsNullOrEmpty(away) ||
+               string.IsNullOrEmpty(homeGo) ||
+               string.IsNullOrEmpty(awayGo) ||
+               string.IsNullOrEmpty(date) ||
+               string.IsNullOrEmpty(referee) ||
+               string.IsNullOrEmpty(status)
+               )
+            {
+
+                MessageBox.Show("Fill in all the gaps");
+
+            }
+            else
+            {
+                try
+                {
+
+                    mtdAgregarPartido();
+                    mtdBlanqueado();
+                    MessageBox.Show("New data entered");
+
+                }
+                catch (Exception ez)
+                {
+                    MessageBox.Show("Algo salio mal " + ez.Message);
+                }
             }
         }
     }

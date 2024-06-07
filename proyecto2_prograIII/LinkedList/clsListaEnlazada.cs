@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,33 +8,31 @@ using System.Threading.Tasks;
 namespace proyecto2_prograIII.LinkedList
 {
 
-    public class clsListaEnlazada
+    using System.Collections;
+    using System.Collections.Generic;
+
+    public class clsListaEnlazada : IEnumerable<Object>
     {
         private clsNodoLK inicio;
 
         public void AgregarInicio(Object obj)
         {
-
             clsNodoLK agregar = new clsNodoLK(obj);
 
             if (inicio == null)
             {
-
                 inicio = agregar;
-
             }
             else
             {
                 clsNodoLK aux = inicio;
                 inicio = agregar;
                 inicio.siguiente = aux;
-            }                
-
+            }
         }
 
         public void AgregarFinal(Object obj)
         {
-
             clsNodoLK agregar = new clsNodoLK(obj);
 
             if (inicio == null)
@@ -66,7 +65,6 @@ namespace proyecto2_prograIII.LinkedList
 
         public clsNodoLK buscar(Object buscado)
         {
-
             InterfaceComp dato;
             bool encontrado = false;
             clsNodoLK primero = inicio;
@@ -75,7 +73,6 @@ namespace proyecto2_prograIII.LinkedList
             while (!encontrado && primero != null)
             {
                 if (dato.igualQue(primero.dato))
-                    
                     encontrado = true;
                 else
                 {
@@ -87,7 +84,6 @@ namespace proyecto2_prograIII.LinkedList
 
         public string Modificar(Object buscado, Object nuevoValor)
         {
-
             clsNodoLK nodo = buscar(buscado);
             if (nodo != null)
             {
@@ -98,8 +94,6 @@ namespace proyecto2_prograIII.LinkedList
             {
                 return "Nodo no encontrado";
             }
-
-            
         }
 
         public string Eliminar(Object buscado)
@@ -110,7 +104,6 @@ namespace proyecto2_prograIII.LinkedList
             {
                 // El nodo a eliminar es el primero
                 inicio = inicio.siguiente;
-
             }
             else
             {
@@ -131,16 +124,28 @@ namespace proyecto2_prograIII.LinkedList
                     return "Nodo Eliminado";
                 }
                 else
-                {                    
+                {
                     return "Nodo no encontrado";
                 }
-
-
             }
             return "";
         }
 
+        // Implementación de IEnumerable para poder usar foreach
+        public IEnumerator<Object> GetEnumerator()
+        {
+            clsNodoLK actual = inicio;
+            while (actual != null)
+            {
+                yield return actual.dato;
+                actual = actual.siguiente;
+            }
+        }
 
-
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
+
 }

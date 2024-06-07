@@ -91,7 +91,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
 
                 if ((primero.dato is clsNodoLKHash))
                 {
-                    if (dato.igualQue(primero.dato))
+                    if (dato.igualQueHash(primero.dato))
 
                         encontrado = true;
                     else
@@ -101,7 +101,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
                 }
                 else
                 {
-                    if (dato.igualQueEliminar(primero.dato))
+                    if (dato.igualQueEliminarHash(primero.dato))
 
                         encontrado = true;
                     else
@@ -124,7 +124,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
 
             
             if (
-                ((InterfaceCompHash)((clsNodoLKHash)inicio.dato).dato).igualQueEliminar(buscado)
+                ((InterfaceCompHash)((clsNodoLKHash)inicio.dato).dato).igualQueEliminarHash(buscado)
                 )
             {
                 // Almacena el dato antiguo
@@ -144,7 +144,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
 
                     if (actual.dato is clsNodoLKHash)
                     {
-                        if (!((InterfaceCompHash)((clsNodoLKHash)actual.dato).dato).igualQueEliminar(buscado))
+                        if (!((InterfaceCompHash)((clsNodoLKHash)actual.dato).dato).igualQueEliminarHash(buscado))
                         {
                             anterior = actual;
                             actual = actual.siguiente;
@@ -156,7 +156,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
                     }
                     else
                     {
-                        if (!((InterfaceCompHash)(actual.dato)).igualQueEliminar(buscado))
+                        if (!((InterfaceCompHash)(actual.dato)).igualQueEliminarHash(buscado))
                         {
                             anterior = actual;
                             actual = actual.siguiente;
@@ -196,7 +196,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
             if (!(inicio.dato is clsNodoLKHash))
             {
                 if (
-                ((InterfaceCompHash)inicio.dato).igualQueEliminar(buscado)
+                ((InterfaceCompHash)inicio.dato).igualQueEliminarHash(buscado)
                 )
                 {
 
@@ -211,7 +211,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
                 {
                     clsNodoLKHash actual = inicio;
                     clsNodoLKHash anterior = null;
-                    while (actual != null && !((InterfaceCompHash)actual.dato).igualQueEliminar(buscado))
+                    while (actual != null && !((InterfaceCompHash)actual.dato).igualQueEliminarHash(buscado))
                     {
                         anterior = actual;
                         actual = actual.siguiente;
@@ -234,7 +234,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
             }
 
             if (
-                ((InterfaceCompHash)((clsNodoLKHash)inicio.dato).dato).igualQueEliminar(buscado)
+                ((InterfaceCompHash)((clsNodoLKHash)inicio.dato).dato).igualQueEliminarHash(buscado)
                 )
             {
 
@@ -256,7 +256,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
 
                     if (actual.dato is clsNodoLKHash)
                     {
-                        if (!((InterfaceCompHash)((clsNodoLKHash)actual.dato).dato).igualQueEliminar(buscado))
+                        if (!((InterfaceCompHash)((clsNodoLKHash)actual.dato).dato).igualQueEliminarHash(buscado))
                         {
                             anterior = actual;
                             actual = actual.siguiente;
@@ -268,7 +268,7 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
                     }
                     else
                     {
-                        if (!((InterfaceCompHash)actual.dato).igualQueEliminar(buscado))
+                        if (!((InterfaceCompHash)actual.dato).igualQueEliminarHash(buscado))
                         {
                             anterior = actual;
                             actual = actual.siguiente;

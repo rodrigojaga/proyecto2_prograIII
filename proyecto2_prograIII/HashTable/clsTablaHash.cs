@@ -27,7 +27,7 @@ namespace proyecto2_prograIII.HashTable
         public long fncHashMod(long intValor)
         {
 
-            return (intValor/17) % intTamanoTabla;
+            return (intValor) % intTamanoTabla;
 
         }
 

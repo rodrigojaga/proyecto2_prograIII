@@ -11,3 +11,4 @@ C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\pr
 C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.frmEquipo.resources
 C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.frmJugador.resources
 C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.frmPartidos.resources
+C:\Users\rodri\source\repos\proyecto2_prograIII\proyecto2_prograIII\obj\Debug\proyecto2_prograIII.frmTorneo.resources

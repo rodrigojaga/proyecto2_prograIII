@@ -146,5 +146,11 @@ namespace proyecto2_prograIII
             // Establecer la nueva posición del control
             control.Location = new System.Drawing.Point(x, y);
         }
+
+        private void torneosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmTorneo();
+            frm.Show();
+        }
     }
 }

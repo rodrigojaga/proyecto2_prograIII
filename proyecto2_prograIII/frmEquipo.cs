@@ -45,6 +45,10 @@ namespace proyecto2_prograIII
                     bool header = true;
                     while ((line = reader.ReadLine()) != null)
                     {
+                        if (line.StartsWith("#"))
+                        {
+                            continue;
+                        }
                         // Saltar la primera línea si es un encabezado
                         if (header)
                         {
@@ -53,9 +57,9 @@ namespace proyecto2_prograIII
                         }
 
                         string[] parts = line.Split(',');
-                        if (parts.Length == 7)
+                        if (parts.Length == 8)
                         {
-                            clsEquipos team = new clsEquipos(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6]);
+                            clsEquipos team = new clsEquipos(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6], parts[7]);
                             avl.insertar(team);
                         }
                         else
@@ -95,11 +99,12 @@ namespace proyecto2_prograIII
                 string.IsNullOrEmpty(txtLosses.Text) ||
                 string.IsNullOrEmpty(txtMatches.Text) ||
                 string.IsNullOrEmpty(txtTeamName.Text) ||
-                string.IsNullOrEmpty(txtWins.Text)
+                string.IsNullOrEmpty(txtWins.Text)  ||
+                string.IsNullOrEmpty(txtPerfomanceRank.Text)
                 )
             {
 
-                MessageBox.Show("Llene todos los campos");
+                MessageBox.Show("FILL IN AL THE GAPS");
 
             }
             else
@@ -125,7 +130,8 @@ namespace proyecto2_prograIII
             string[] newRecords = new string[]
             {
         //team_name,common_name,country,matches_played,wins,draws,losses
-        $"{txtTeamName.Text},{txtCommonName.Text},{txtCountry.Text},{txtMatches.Text},{txtWins.Text},{txtDraws.Text},{txtLosses.Text}"
+            $"{txtTeamName.Text},{txtCommonName.Text},{txtCountry.Text}," +
+            $"{txtMatches.Text},{txtWins.Text},{txtDraws.Text},{txtLosses.Text}, {txtPerfomanceRank.Text}"
             };
 
             try
@@ -162,6 +168,7 @@ namespace proyecto2_prograIII
             txtWins.Text = "";
             txtDraws.Text = "";            
             txtLosses.Text = "";
+            txtPerfomanceRank.Text = "";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -179,6 +186,7 @@ namespace proyecto2_prograIII
             txtWins.Text = c.wins;
             txtDraws.Text = c.draws;
             txtLosses.Text = c.losse;
+            txtPerfomanceRank.Text = c.performance_rank;
 
 
         }

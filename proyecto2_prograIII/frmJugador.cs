@@ -48,6 +48,10 @@ namespace proyecto2_prograIII
                     bool header = true;
                     while ((line = reader.ReadLine()) != null)
                     {
+                        if (line.StartsWith("#"))
+                        {
+                            continue;
+                        }
                         // Saltar la primera línea si es un encabezado
                         if (header)
                         {

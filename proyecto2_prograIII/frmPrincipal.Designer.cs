@@ -32,6 +32,7 @@
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.torneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.torneosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.equiposToolStripMenuItem,
             this.juadoresToolStripMenuItem,
-            this.torneosToolStripMenuItem});
+            this.torneosToolStripMenuItem,
+            this.torneosToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(940, 24);
@@ -68,6 +70,13 @@
             this.torneosToolStripMenuItem.Text = "Partidos";
             this.torneosToolStripMenuItem.Click += new System.EventHandler(this.torneosToolStripMenuItem_Click);
             // 
+            // torneosToolStripMenuItem1
+            // 
+            this.torneosToolStripMenuItem1.Name = "torneosToolStripMenuItem1";
+            this.torneosToolStripMenuItem1.Size = new System.Drawing.Size(60, 20);
+            this.torneosToolStripMenuItem1.Text = "Torneos";
+            this.torneosToolStripMenuItem1.Click += new System.EventHandler(this.torneosToolStripMenuItem1_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,6 +100,7 @@
         private System.Windows.Forms.ToolStripMenuItem equiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem torneosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem torneosToolStripMenuItem1;
     }
 }
 

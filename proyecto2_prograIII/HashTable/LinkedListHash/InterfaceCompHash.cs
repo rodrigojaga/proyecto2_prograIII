@@ -10,13 +10,13 @@ namespace proyecto2_prograIII.HashTable.LinkedListHash
     {
 
 
-        bool igualQue(Object q);
-        bool igualQueEliminar(Object q);
+        bool igualQueHash(Object q);
+        bool igualQueEliminarHash(Object q);
 
         /// <summary>
         /// TOMA DETERMINADO VALOR (STRING) Y LO DEBE DEVOLVER EN FORMA DE LA SUMA DE SUS CARACTERES EN CODIGO ASCII
         /// 
-        /// 
+        ///
         /// 
         ///    long asciiSum = 0;
         ///    foreach (char c in stringATransformar)

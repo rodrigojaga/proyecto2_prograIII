@@ -1,24 +1,20 @@
-team_name,common_name,country,matches_played,wins,draws,losses
-Arsenal FC,Arsenal,England,38,21,7,10
-Tottenham Hotspur FC,Tottenham Hotspur,England,38,23,2,13
-Manchester City FC,Manchester City,England,38,32,2,4
-Leicester City FC,Leicester City,England,38,15,7,16
-Crystal Palace FC,Crystal Palace,England,38,14,7,17
-Everton FC,Everton,England,38,15,9,14
-Burnley FC,Burnley,England,38,11,7,20
-Southampton FC,Southampton,England,38,9,12,17
-AFC Bournemouth,AFC Bournemouth,England,38,13,6,19
-Manchester United FC,Manchester United,England,38,19,9,10
-Liverpool FC,Liverpool,England,38,30,7,1
-Chelsea FC,Chelsea,England,38,21,9,8
-West Ham United FC,West Ham United,England,38,15,7,16
-Watford FC,Watford,England,38,14,8,16
-Newcastle United FC,Newcastle United,England,38,12,9,17
-Cardiff City FC,Cardiff City,Wales,38,10,4,24
-Fulham FC,Fulham,England,38,7,5,26
-Brighton & Hove Albion FC,Brighton & Hove Albion,England,38,9,9,20
-Huddersfield Town FC,Huddersfield Town,England,38,3,7,28
-Wolverhampton Wanderers FC,Wolverhampton Wanderers,England,38,16,9,13
-qw,qw,w,qw,qw,qw,qw
-Barcelona FC,Barcelona,España,50,20,0,30
-a,a,a,a,aa,aa,a
+team_name,common_name,country,matches_played,wins,draws,losses,performance_rank
+Arsenal FC,Arsenal,England,38,21,7,10,5
+Tottenham Hotspur FC,Tottenham Hotspur,England,38,23,2,13,4
+Manchester City FC,Manchester City,England,38,32,2,4,1
+Leicester City FC,Leicester City,England,38,15,7,16,9
+Crystal Palace FC,Crystal Palace,England,38,14,7,17,12
+Everton FC,Everton,England,38,15,9,14,8
+Burnley FC,Burnley,England,38,11,7,20,15
+Southampton FC,Southampton,England,38,9,12,17,16
+AFC Bournemouth,AFC Bournemouth,England,38,13,6,19,14
+Manchester United FC,Manchester United,England,38,19,9,10,6
+Liverpool FC,Liverpool,England,38,30,7,1,2
+Chelsea FC,Chelsea,England,38,21,9,8,3
+West Ham United FC,West Ham United,England,38,15,7,16,10
+Watford FC,Watford,England,38,14,8,16,11
+Newcastle United FC,Newcastle United,England,38,12,9,17,13
+Cardiff City FC,Cardiff City,Wales,38,10,4,24,18
+Fulham FC,Fulham,England,38,7,5,26,19
+Brighton & Hove Albion FC,Brighton & Hove Albion,England,38,9,9,20,17
+Huddersfield Town FC,Huddersfield Town,England,38,3,7,28,20
